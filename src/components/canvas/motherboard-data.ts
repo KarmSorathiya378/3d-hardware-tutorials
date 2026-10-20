@@ -258,3 +258,5 @@ export const MOTHERBOARD_COMPONENTS: MotherboardComponentData[] = [
     highlightColor: "#ec4899",
   },
 ];
+
+export const motherboardComponents = MOTHERBOARD_COMPONENTS;

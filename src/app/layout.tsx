@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AppShell from "@/components/layout/AppShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "3DHV - 3D Visualizer",
-  description: "3D Visualizer built with Next.js, TypeScript, and Tailwind CSS",
+  title: "3DHV — Hardware, understood.",
+  description: "Get to know your computer. Explore a motherboard, PC tower, hard disk, and SSD through interactive 3D models.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#fafbf8",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -24,8 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen bg-white text-slate-900 antialiased font-sans">
-        {children}
+      <body className="antialiased font-sans">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

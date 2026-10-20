@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local design and browser verification output
+.work/
+.taste-skill/
+.impeccable/questions/

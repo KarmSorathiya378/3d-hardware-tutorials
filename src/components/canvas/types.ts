@@ -51,7 +51,9 @@ export interface CanvasSettings {
 
 export interface MotherboardCanvasProps {
   selectedId?: string | null;
+  hardDiskSelectedId?: string | null;
   onSelectComponent?: (component: MotherboardComponentData | null) => void;
+  onHardDiskSelect?: (component: HardDiskComponentData | null) => void;
   className?: string;
   initialSettings?: Partial<CanvasSettings>;
   height?: string | number;

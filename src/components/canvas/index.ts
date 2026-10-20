@@ -1,5 +1,6 @@
 export * from "./types";
 export * from "./motherboard-data";
+export * from "./harddisk-data";
 export * from "./MotherboardModel";
 export * from "./HardDisk";
 export * from "./HardDiskModel";

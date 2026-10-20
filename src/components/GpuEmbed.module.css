@@ -1,0 +1,69 @@
+.embedWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.embedWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  z-index: 1;
+}
+
+.credit {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.credit a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  color: var(--error-color);
+  text-align: center;
+  padding: 2rem;
+}
+
+.error p {
+  margin: 0.5rem 0;
+}

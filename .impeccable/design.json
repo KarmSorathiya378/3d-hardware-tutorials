@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T13:12:53.503525+00:00",
+  "title": "Design System: 3DHV",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fafbf8",
+        "tonalRamp": [
+          "#2a311c",
+          "#485430",
+          "#6a7b46",
+          "#889f5b",
+          "#a5b780",
+          "#becba4",
+          "#dae1cb",
+          "#f3f6ef"
+        ]
+      },
+      "stage": {
+        "role": "neutral",
+        "displayName": "Model stage",
+        "canonical": "#e9ede6",
+        "tonalRamp": [
+          "#252c20",
+          "#414d38",
+          "#5f7151",
+          "#7a9169",
+          "#99ac8b",
+          "#b6c3ac",
+          "#d5ddd0",
+          "#f2f4f0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Forest ink",
+        "canonical": "#1d3025",
+        "tonalRamp": [
+          "#1d3025",
+          "#325340",
+          "#49795d",
+          "#5e9c78",
+          "#83b498",
+          "#a6c9b5",
+          "#cce0d5",
+          "#eff5f2"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted ink",
+        "canonical": "#5e6d60",
+        "tonalRamp": [
+          "#232924",
+          "#3d473f",
+          "#5a685c",
+          "#748676",
+          "#94a396",
+          "#b2bdb4",
+          "#d3d9d4",
+          "#f1f3f2"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Action green",
+        "canonical": "#245d3b",
+        "tonalRamp": [
+          "#153723",
+          "#25603d",
+          "#368c59",
+          "#46b472",
+          "#70c793",
+          "#98d7b2",
+          "#c4e8d3",
+          "#edf8f1"
+        ]
+      },
+      "highlight": {
+        "role": "primary",
+        "displayName": "Lime highlight",
+        "canonical": "#d7ed9d",
+        "tonalRamp": [
+          "#32410c",
+          "#577015",
+          "#7fa41e",
+          "#a4d327",
+          "#bae057",
+          "#cee986",
+          "#e3f2ba",
+          "#f6fbe9"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Secondary surface",
+        "canonical": "#f0f3ec",
+        "tonalRamp": [
+          "#272f1e",
+          "#445133",
+          "#64774b",
+          "#819961",
+          "#9fb285",
+          "#bac8a7",
+          "#d8dfcd",
+          "#f3f5ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Device title."
+      },
+      "title": {
+        "displayName": "Inspector title",
+        "purpose": "Selected component or introduction."
+      },
+      "body": {
+        "displayName": "Explanation",
+        "purpose": "Component explanations."
+      },
+      "label": {
+        "displayName": "Control label",
+        "purpose": "Viewer and disclosure controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "model-pin",
+        "value": "0 2px 7px #20322624",
+        "purpose": "Small ambient separation from model surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-transition",
+        "value": "160ms",
+        "purpose": "Button color and press response."
+      },
+      {
+        "name": "pin-transition",
+        "value": "180ms",
+        "purpose": "Model pin state colors."
+      },
+      {
+        "name": "detail-reveal",
+        "value": "260ms",
+        "purpose": "Inspector selection reveal."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-max",
+        "value": "520px"
+      },
+      {
+        "name": "stack-max",
+        "value": "800px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "First-part action",
+      "kind": "button",
+      "refersTo": "button-start",
+      "description": "Introduces the first component.",
+      "html": "<button class=\"ds-start\">Explore the first part <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"><path d=\"M4 12h16m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-start{font-family:var(--font-geist-sans, Geist),sans-serif;cursor:pointer;border:0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 18px;width:100%;background:var(--lime,#d7ed9d);color:var(--ink,#1d3025);border-radius:4px;font-size:13px;font-weight:550;transition:background-color 160ms,transform 160ms}.ds-start:active{transform:scale(.96)}@media(hover:hover) and (pointer:fine){.ds-start:hover{background:#cce48b}}.ds-start:focus-visible{outline:2px solid var(--accent,#245d3b);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-start{transition:none}}"
+    },
+    {
+      "name": "Device navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Selected device uses a dark pill.",
+      "html": "<nav aria-label=\"Hardware\"><button class=\"ds-nav\" aria-pressed=\"true\">Motherboard</button> <button class=\"ds-nav\" aria-pressed=\"false\">PC tower</button></nav>",
+      "css": ".ds-nav{font-family:var(--font-geist-sans, Geist),sans-serif;cursor:pointer;border:0;padding:12px 17px;font-size:14px;border-radius:24px;background:transparent;color:var(--muted,#5e6d60);transition:background-color 160ms}.ds-nav[aria-pressed=true]{background:var(--ink,#1d3025);color:var(--paper,#fafbf8)}@media(hover:hover) and (pointer:fine){.ds-nav:not([aria-pressed=true]):hover{background:var(--surface,#f0f3ec)}}.ds-nav:focus-visible{outline:2px solid var(--accent,#245d3b);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-nav{transition:none}}"
+    },
+    {
+      "name": "Viewer control",
+      "kind": "button",
+      "refersTo": "viewer-control",
+      "description": "Compact circular reset control.",
+      "html": "<button class=\"ds-control\" aria-label=\"Reset view\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 10a8 8 0 1 1 1 7M4 4v6h6\"/></svg></button>",
+      "css": ".ds-control{font-family:var(--font-geist-sans, Geist),sans-serif;cursor:pointer;border:0;display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;border-radius:50%;background:var(--paper,#fafbf8);color:var(--ink,#1d3025);transition:transform 160ms}.ds-control:active{transform:scale(.96)}.ds-control:focus-visible{outline:2px solid var(--accent,#245d3b);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+    },
+    {
+      "name": "Numbered model pin",
+      "kind": "button",
+      "refersTo": "hardware-pin",
+      "description": "Connects a model component to its inspector.",
+      "html": "<button class=\"ds-pin\" aria-label=\"Select component 1\">1</button> <button class=\"ds-pin ds-selected\" aria-label=\"Selected component 2\" aria-pressed=\"true\">2</button>",
+      "css": ".ds-pin{font-family:var(--font-geist-sans, Geist),sans-serif;cursor:pointer;border:0;width:31px;height:31px;border-radius:50%;background:var(--paper,#fafbf8);color:var(--ink,#1d3025);font-size:12px;font-weight:550;box-shadow:0 2px 7px #20322624;transition:background-color 180ms,color 180ms}.ds-pin.ds-selected{background:var(--accent,#245d3b);color:white;outline:5px solid #d7ed9d80}@media(hover:hover) and (pointer:fine){.ds-pin:hover{background:var(--lime,#d7ed9d);color:var(--ink,#1d3025)}}.ds-pin:focus-visible{outline:2px solid var(--accent,#245d3b);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-pin{transition:none}}"
+    },
+    {
+      "name": "Model stage",
+      "kind": "custom",
+      "refersTo": "model-stage",
+      "description": "Flat tonal container for interactive hardware.",
+      "html": "<section class=\"ds-stage\" aria-label=\"Model stage\">Motherboard</section>",
+      "css": ".ds-stage{font-family:var(--font-geist-sans, Geist),sans-serif;background:var(--stage,#e9ede6);color:var(--ink,#1d3025);border-radius:6px;position:relative;overflow:hidden;min-height:180px;padding:26px 28px;font-size:14px;font-weight:550}.ds-stage:focus-visible{outline:2px solid var(--accent,#245d3b);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-stage{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The hardware study table",
+    "overview": "A quiet, object-led explorer where the model carries the visual weight and one inspector explains the selected part. Pale green surfaces echo circuit-board materials without competing with the hardware. The original split-volume logo suggests looking inside a component.\n\nInteraction references are Lusion's 3D storytelling, Bruno Simon's direct object exploration, and NASA Eyes' selection/focus/detail loop. Their compositions are not copied. Further explanation, quizzes, and credits appear progressively to keep the workspace spacious.",
+    "keyCharacteristics": [
+      "A dominant model stage and a compact inspector.",
+      "Dark green text, pale green surfaces, and restrained lime actions.",
+      "Numbered selection shared by the model and component directory.",
+      "Locally served Geist, flat surfaces, and circular viewer controls."
+    ],
+    "rules": [
+      {
+        "name": "The Selection Rule",
+        "body": "Reserve strong filled states for the current device, view, or component so selection stays legible.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** keep the model and one selected explanation visually dominant.",
+      "**Do** keep selection synchronized between the model and directory.",
+      "**Do** preserve visible keyboard focus and reduced-motion behavior.",
+      "**Do** describe the photographic motherboard and representative geometry honestly."
+    ],
+    "donts": [
+      "**Don't** add decorative marketing sections or repeated instructional panels to the explorer.",
+      "**Don't** replace inline component numbers with decorative heading eyebrows.",
+      "**Don't** enable continuous model motion by default.",
+      "**Don't** present the motherboard reconstruction as an exact scan or CAD model."
+    ]
+  }
+}

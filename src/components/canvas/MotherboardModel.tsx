@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ThreeEvent } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { ModelAnnotation } from "../hardware/ModelAnnotation";
 import { MOTHERBOARD_COMPONENTS } from "./motherboard-data";
 import { MotherboardComponentData } from "./types";
 
@@ -108,7 +108,7 @@ export function MotherboardModel({
       </mesh>
 
       {/* 2. Interactive Motherboard Components */}
-      {MOTHERBOARD_COMPONENTS.map((comp) => {
+      {MOTHERBOARD_COMPONENTS.map((comp, index) => {
         const isSelected = selectedId === comp.id;
         const isHovered = hoveredId === comp.id;
         const activeColor = isSelected
@@ -125,6 +125,7 @@ export function MotherboardModel({
             onPointerOver={(e) => handlePointerOver(e, comp.id)}
             onPointerOut={handlePointerOut}
           >
+            <ModelAnnotation position={[0, comp.size[1] / 2 + 0.3, 0]} number={index + 1} title={comp.name} selected={isSelected} onSelect={() => onSelectComponent?.(comp)}/>
             {/* Component Main Mesh */}
             <mesh castShadow receiveShadow>
               <boxGeometry args={comp.size} />
@@ -157,34 +158,13 @@ export function MotherboardModel({
                   />
                 </mesh>
                 {/* 3D Floating Tag with Component Name */}
-                <Html
-                  position={[0, 0.5, 0]}
-                  center
-                  distanceFactor={15}
-                  className="pointer-events-none select-none transition-all"
-                >
-                  <div className="flex items-center gap-1.5 rounded-full bg-slate-900/90 px-3 py-1 shadow-lg ring-1 ring-blue-500/50 backdrop-blur-sm">
-                    <span className="h-2 w-2 rounded-full bg-blue-400 animate-ping" />
-                    <span className="text-xs font-semibold whitespace-nowrap text-white">
-                      {comp.name}
-                    </span>
-                  </div>
-                </Html>
+                <ModelAnnotation position={[0, 1.05, 0]} title={comp.name}/>
               </group>
             )}
 
             {/* Hover Tooltip when not selected */}
             {isHovered && !isSelected && (
-              <Html
-                position={[0, comp.size[1] / 2 + 0.35, 0]}
-                center
-                distanceFactor={18}
-                className="pointer-events-none select-none"
-              >
-                <div className="rounded-md bg-slate-900/85 px-2.5 py-1 text-[11px] font-medium text-slate-100 shadow-md backdrop-blur-sm border border-slate-700">
-                  {comp.name}
-                </div>
-              </Html>
+              <ModelAnnotation position={[0, comp.size[1] / 2 + 0.85, 0]} title={comp.name}/>
             )}
 
             {/* Internal specific details for notable components */}
