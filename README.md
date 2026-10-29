@@ -104,6 +104,7 @@ Built with **Next.js, React, TypeScript, Three.js, React Three Fiber and Drei**,
 
 ```text
 src/app/                    Pages and shared app layout
+src/components/dev/         Developer profiles, showcase and contact footer
 src/components/hardware/    3D models, component content and explorer
 src/components/layout/      Branding, sidebar and mobile navigation
 src/components/test/        Question bank, grading and test interface
